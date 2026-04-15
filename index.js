@@ -7,8 +7,8 @@ const port = 3000;
 
 // (req, res): callback
 app.get('/', (req, res) => {
-    // res.send("Get Request!")
-    res.sendFile('./dummy.html', {root: __dirname})
+    res.send("Get Request!")
+    // res.sendFile('./dummy.html', {root: __dirname})
 })
 
 app.post('/items', (req, res) =>{
@@ -25,6 +25,7 @@ app.put('/items/:id', (req, res) =>{
 app.delete('/items/:id', (req, res) =>{
     res.send("Delete request");
 })
+
 
 app.listen(port, () =>{
     console.log(`Listening on port ${port}`)
