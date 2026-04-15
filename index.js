@@ -7,8 +7,8 @@ const port = 3000;
 
 // (req, res): callback
 app.get('/', (req, res) => {
-    res.send("Get Request!")
-    // res.sendFile('./dummy.html', {root: __dirname})
+    // res.send("Get Request!")
+    res.sendFile('./dummy.html', {root: __dirname})
 })
 
 app.post('/items', (req, res) =>{
