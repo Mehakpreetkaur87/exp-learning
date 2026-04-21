@@ -16,6 +16,29 @@ const port = 3000
 app.use(express.json());
 
 
+// middleware - logging, auth, validation
+
+const loggingMiddleware = function(req, res, next){
+    console.log("LOGGED!");
+    next(); // move to next middleware
+}
+
+
+
+const authMiddleware = function (req, res, next){
+    console.log("Authentication!!")
+    next();
+}
+
+
+
+const validationMiddlware = function (req, res, next){
+    console.log("Validate");
+    next();
+}
+
+
+
 // Define a route
 // app.get → handles HTTP GET requests
 // '/' → root route (homepage)
