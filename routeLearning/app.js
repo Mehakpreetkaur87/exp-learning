@@ -11,6 +11,11 @@ const app = express()
 const port = 3000
 
 
+// loading middleware into the app
+// inbuilt middleware
+app.use(express.json());
+
+
 // Define a route
 // app.get → handles HTTP GET requests
 // '/' → root route (homepage)
@@ -19,10 +24,11 @@ app.get('/', (req, res) => {
     // req → request object (data coming from client)
     // res → response object (data sent back to client)
 
+    console.log(req.body);
+
     // res.send() → sends response back to browser
     res.send("Hello")
 })
-
 
 // Start the server
 // app.listen() → tells server to start listening
@@ -33,3 +39,6 @@ app.listen(port, () => {
     // Console log shows server is running
     console.log(`Server is running at ${port}`);    
 })
+
+
+
