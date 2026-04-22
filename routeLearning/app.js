@@ -27,7 +27,8 @@ app.use(loggingMiddleware);
 
 const authMiddleware = function (req, res, next){
     console.log("Authentication!!")
-    next();
+    res.send("Stop!")
+    // next();
 }
 
 app.use(authMiddleware);
@@ -39,7 +40,6 @@ const validationMiddlware = function (req, res, next){
 
 app.use(validationMiddlware);
 
-
 // Define a route
 // app.get → handles HTTP GET requests
 // '/' → root route (homepage)
@@ -47,11 +47,11 @@ app.get('/', (req, res) => {
 
     // req → request object (data coming from client)
     // res → response object (data sent back to client)
-
+    console.log("I am Route Handler!");
     console.log(req.body);
 
     // res.send() → sends response back to browser
-    res.send("Hello")
+    res.send(req.body)
 })
 
 // Start the server
