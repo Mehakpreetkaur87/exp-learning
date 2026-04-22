@@ -23,20 +23,21 @@ const loggingMiddleware = function(req, res, next){
     next(); // move to next middleware
 }
 
-
+app.use(loggingMiddleware);
 
 const authMiddleware = function (req, res, next){
     console.log("Authentication!!")
     next();
 }
 
-
+app.use(authMiddleware);
 
 const validationMiddlware = function (req, res, next){
     console.log("Validate");
     next();
 }
 
+app.use(validationMiddlware);
 
 
 // Define a route
