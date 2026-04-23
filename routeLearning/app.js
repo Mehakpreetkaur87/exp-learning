@@ -18,27 +18,34 @@ app.use(express.json());
 
 // middleware - logging, auth, validation
 
-const loggingMiddleware = function(req, res, next){
-    console.log("LOGGED!");
-    next(); // move to next middleware
-}
+// const loggingMiddleware = function(req, res, next){
+//     console.log("LOGGED!");
+//     next(); // move to next middleware
+// }
 
-app.use(loggingMiddleware);
+// app.use(loggingMiddleware);
 
-const authMiddleware = function (req, res, next){
-    console.log("Authentication!!")
-    res.send("Stop!")
-    // next();
-}
+// const authMiddleware = function (req, res, next){
+//     console.log("Authentication!!")
+//     // res.send("Stop!")
+//     next();
+// }
 
-app.use(authMiddleware);
+// app.use(authMiddleware);
 
-const validationMiddlware = function (req, res, next){
-    console.log("Validate");
-    next();
-}
+// const validationMiddlware = function (req, res, next){
+//     console.log("Validate");
+//     next();
+// }
 
-app.use(validationMiddlware);
+// app.use(validationMiddlware);
+
+
+const route = require("./routers/route.js");
+// mounting the routes
+app.use('/api', route);
+
+
 
 // Define a route
 // app.get → handles HTTP GET requests
